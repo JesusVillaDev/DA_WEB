@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectores</title>
+    <link rel="stylesheet" href="css/4-estilos.css">   
+</head>
+<body>
+    <h1>Selectores de reglas css</h1>
+
+    <div id="universal"> <h5>Selector:  * { }</h5>
+        <p>
+            Este selector es el universal.
+            Los estilos se aplican a todo el html.
+        </p>
+    </div>
+
+    <section id="section-div"> <h5>Selector: &lt;div&gt;</h5> 
+        <p>
+            Este selector es el de etiqueta.
+            Los estilos se aplican a todas las etiquetas &lt;div&gt;.
+        </p>
+    </section>
+
+    <div id="selector-id"> <h5>Selector: #id</h5> 
+        <p>
+            Este selector es de id.
+            Los estilos se aplican a la etiqueta con id="selector-id"
+        </p>
+    </div>
+
+    <div class="selector-class"> <h5>Selector: .class</h5> 
+        <p>
+            Este selector de clase.
+            Los estilos se aplican a todas las etiquetas que comparten class="selector-class" 
+        </p>
+    </div>
+
+    <div id="selector-atributo" aria-readonly="false"> <h5>Selector: [input:text]</h5> 
+        <p>
+            Este selector es de atributo.
+            Los estilos se aplican a todas las etiquetas que contengan el atributo div[aria-readonly="false"]
+        </p>
+    </div>
+</body>
+</html>
