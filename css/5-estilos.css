@@ -1,3 +1,9 @@
+@property --giro {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,11 +14,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  background: radial-gradient(
-    circle,
-    rgba(63, 94, 251, 1) 0%,
-    rgba(252, 70, 107, 1) 100%
-  );
+  background-color: rgb(25, 71, 105);
   margin: 0 10px 0 10px;
   overflow: hidden;
 }
@@ -38,6 +40,9 @@ h1 {
 }
 
 div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-basis: 230px;
   height: 100px;
   flex-grow: 1;
@@ -46,24 +51,22 @@ div {
   flex-shrink: 1;
   font-size: 2rem;
   border-radius: 12px;
-  border: 1px solid transparent;
-  background-color: blueviolet;
+  background-color: rgb(90, 3, 172);
+  box-shadow: 5px 5px 5px 1px indigo;
   z-index: 0;
   transition: 0.5s ease-in-out;
-  color: aquamarine;
-  text-align: center;
-  animation: 2s linear infinite alternate animacionTexto;
+  color: rgb(190, 255, 233);
+  border: 0 solid rgb(90, 3, 172);
 }
 
 div::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  border: 30px solid rgb(rgb(255, 255, 255));
+  top: 3px;
+  bottom: 3px;
+  left: 3px;
+  right: 3px;
+  border-radius: 9px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -82,21 +85,59 @@ div:hover {
   height: 400px;
   font-size: 1.4;
   padding-top: 300px;
-  background: linear-gradient(
-    25deg,
-    rgb(132, 0, 255),
-    rgb(200, 0, 200),
-    rgb(255, 0, 255),
-    rgb(114, 0, 152)
+  border-radius: 12px;
+}
+
+div:hover.clase1 {
+  background: conic-gradient(from var(--giro), rgb(255, 0, 0), rgb(0, 0, 0));
+  animation: 2.5s infinite linear vueltas;
+}
+div:hover.clase2 {
+  background: conic-gradient(
+    from var(--giro),
+    yellow,
+    rgb(255, 254, 254),
+    blue,
+    rgb(153, 66, 54)
   );
-  /* animation: girar 6s linear infinite; */
-  border: 2px solid transparent;
-  box-shadow: 0px 5px 10px 2px rgb(156, 81, 255);
-  opacity: 1;
-  transition:
-    0.5s ease-in,
-    0.2s color ease-in;
-    animation: 2s infinite alternate animacionBorde;
+  animation: 2.5s infinite linear vueltas;
+}
+div:hover.clase3 {
+  background: conic-gradient(
+    from var(--giro),
+    yellow,
+    rgb(244, 129, 68),
+    rgb(183, 253, 255)
+  );
+  animation: 2.5s infinite linear vueltas;
+}
+div:hover.clase4 {
+  background: conic-gradient(
+    from var(--giro),
+    rgb(198, 204, 217),
+    rgb(64, 85, 133),
+    rgb(130, 234, 255),
+    rgb(123, 128, 110)
+  );
+  animation: 2.5s infinite linear vueltas;
+}
+div:hover.clase5 {
+  background: conic-gradient(
+    from var(--giro),
+    rgb(70, 126, 159),
+    rgb(203, 109, 71),
+    rgb(106, 86, 108)
+  );
+  animation: 2.5s infinite linear vueltas;
+}
+
+@keyframes vueltas {
+  50% {
+    --giro: 180deg;
+  }
+  100% {
+    --giro: 360deg;
+  }
 }
 
 .clase1::before {
@@ -113,26 +154,4 @@ div:hover {
 }
 .clase5::before {
   background-image: url(../images/sannin.jpg);
-}
-
-@keyframes animacionTexto {
-  from {
-    color: aquamarine;
-  }
-  to {
-    color: rgb(62, 30, 158);
-  }
-}
-
-/* @keyframes animacionEscala{
-    from{
-        transform: scale(1);
-    }
-    to{
-        transform: scale(1.1);
-    }
-} */
-
-@keyframes animacionBorde {
-  
 }
